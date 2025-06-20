@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN - MIXD</title>
+  <link type="text/css" rel="stylesheet" href="mystyle.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px 32px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 24px;
+      font-size: 24px;
+      text-align: center;
+      color: #111;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #111;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .login-container button:hover {
+      background-color: #FF3B30;
+    }
+
+    .login-container .link {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .login-container .link a {
+      color: #FF3B30;
+      text-decoration: none;
+    }
+
+.logo.auth-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #111; /* 검정색 */
+  position: fixed;
+  top: 40px;
+  left: 20px;
+  z-index: 1000;
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="logo auth-logo">MIXD</a>
+
+  <div class="login-container">
+    <h2>LOGIN</h2>
+    <form>
+      <input type="text" placeholder="아이디 또는 이메일" required>
+      <input type="password" placeholder="비밀번호" required>
+      <button type="submit">로그인</button>
+    </form>
+    <div class="link">
+      계정이 없으신가요? <a href="signup.html">회원가입</a>
+    </div>
+  </div>
+
+</body>
+</html>
