@@ -1,0 +1,184 @@
+/* support.css */
+
+.support-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 40px;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  
+  /* 자주 묻는 질문 라운드 박스 */
+  .faq-item {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background-color: #eeeeee;
+    transform: scale(1.01);
+  }
+  
+  /* 좌우 여백 맞추기 */
+  .support-container h2,
+  .support-container .subtext,
+  .faq-section h3,
+  .inquiry-section h3 {
+    padding-left: 10px;
+  }
+  
+  /* 질문/답변 스타일 */
+  .faq-item .question {
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 8px;
+  }
+  
+  .faq-item .answer {
+    color: #444;
+    line-height: 1.6;
+  }
+
+
+
+
+
+
+
+  /* 문의 폼 영역 */
+.inquiry-section {
+    margin-top: 60px;
+    padding: 40px;
+    background-color: #fefefe;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .inquiry-section h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #111;
+  }
+  
+  .inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .inquiry-form label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .inquiry-form input[type="text"],
+  .inquiry-form input[type="email"],
+  .inquiry-form textarea {
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+  }
+  
+  .inquiry-form input:focus,
+  .inquiry-form textarea:focus {
+    outline: none;
+    border-color: #ff3b30;
+    box-shadow: 0 0 0 3px rgba(255, 59, 48, 0.1);
+  }
+  
+  .inquiry-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+  
+  .inquiry-form button[type="submit"] {
+    align-self: flex-end;
+    padding: 12px 24px;
+    background-color: #ff3b30;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .inquiry-form button:hover {
+    background-color: #e6322a;
+    transform: translateY(-1px);
+  }
+
+
+
+
+
+
+  /*문의완료*/
+
+  .popup-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .popup-modal.active {
+    display: flex;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .popup-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #111;
+  }
+  
+  #close-popup {
+    padding: 10px 20px;
+    background-color: #ff3b30;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #close-popup:hover {
+    background-color: #d9322a;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }

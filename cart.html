@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장바구니 | MIXD</title>
+  <link rel="stylesheet" href="mystyle.css">
+  <link rel="stylesheet" href="cart.css"> <!-- 🛒 cart 전용 스타일 -->
+</head>
+<body>
+  <section class="cart-wrapper">
+    <h2 class="cart-title">🛒 MY BAG</h2>
+
+    <div class="cart-items">
+      <div class="cart-item">
+        <img src="img/1000.jpg" alt="DROP CORE">
+        <div class="item-info">
+          <h4>DROP CORE</h4>
+          <p>₩29,000</p>
+          <label>수량
+            <input type="number" min="1" value="1">
+          </label>
+          <button class="remove-btn">삭제</button>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <img src="img/1001.jpg.webp" alt="SYNC TRACK Pants">
+        <div class="item-info">
+          <h4>SYNC TRACK Pants</h4>
+          <p>₩54,000</p>
+          <label>수량
+            <input type="number" min="1" value="1">
+          </label>
+          <button class="remove-btn">삭제</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <p>총 합계: <strong>₩83,000</strong></p>
+      <button class="checkout-btn">결제하기</button>
+    </div>
+  </section>
+</body>
+</html>

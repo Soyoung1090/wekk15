@@ -53,10 +53,6 @@
   .top-access a:hover {
     color: #FF3B30; /* 포인트 컬러 */
   }
-      /* 로그인로그아웃 */
-
-
-
 
 
   
@@ -85,18 +81,20 @@
 
   /* Body */
   body {
-    margin-left: 200px;
+    margin-left: 180px;
     font-family: 'Noto Sans', sans-serif;
   }
+  
 
 
   .hero {
     padding: 80px 40px 40px 40px;
-    margin-left: 200px; /* 사이드바 공간 확보 */
+    margin-left: 180px;
     background-color: #fff;
     color: #111;
     max-width: 800px;
   }
+  
 
   
   .hero h2 {
@@ -111,10 +109,10 @@
     line-height: 1.6;
     color: #444;
   }
-
   .product-section {
-    margin-left: 200px;
+    margin-left: 180px; 
     padding: 60px 40px;
+    margin-bottom: 80px; /* 👈 이 줄 추가: footer와의 간격 */
   }
   
   .product-section h3 {
@@ -179,15 +177,20 @@
 /* footer */
 /* footer */
 
-  footer {
-    background-color: #f4f4f4;
-    padding: 30px 40px;
-    margin-left: 200px;
-    border-top: 1px solid #e0e0e0;
-    font-size: 14px;
-    color: #666;
-  }
-  
+.wrapper {
+  flex: 1; /* footer를 밀어내는 역할 */
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: #f4f4f4;
+  padding: 30px 40px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #666;
+}
+
   footer .container {
     display: flex;
     justify-content: space-between;
@@ -214,7 +217,17 @@
 
 
 
+ /*SALE*/
+ .original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
 
+.sale-price {
+  color: #FF3B30;
+  font-weight: bold;
+}
 
 
 
@@ -282,6 +295,7 @@
     flex-direction: column;
     gap: 12px;
     z-index: 1500;
+    margin-bottom: 80px;
   }
   
   .icon-button {
@@ -300,4 +314,80 @@
   .icon-button:hover {
     background-color: #FF3B30;
     color: #fff;
+  }
+
+
+
+
+
+  /*상세페이지*/
+  .product-detail img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px;
+  }
+
+  .product-detail {
+    font-size: 16px;
+    color: #111;
+    padding: 40px;
+    line-height: 1.6;
+  }
+
+  .product-detail-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+
+
+  /*반응형*/
+  @media (max-width: 480px) {
+    /* MIXD PICKS 위치 조정 */
+    .product-section h3 {
+      margin-top: 8px;
+      text-align: left;
+      font-size: 18px;
+      padding-left: 16px;
+    }
+  
+    /* 상품 카드 너비 확대 */
+    .product-card {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+  
+    .product-card h4 {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  
+    .product-card p {
+      font-size: 14px;
+    }
+  
+    /* 상단 히어로 섹션 여백 줄이기 */
+    .hero {
+      padding: 30px 20px 10px;
+      text-align: left;
+    }
+  
+    .hero h2 {
+      font-size: 24px;
+    }
+  
+    .hero p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  
+    /* floating-icons 위치 조정 필요 시 추가 가능 */
   }

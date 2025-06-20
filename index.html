@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MIXD</title>
-  <link type="text/css" rel="stylesheet" href="mystyle.css">
+  <link type="text/css" rel="stylesheet" href="mystyle.css"/>
 </head>
 <body>
 
-    <div class="floating-icons">
-        <button class="icon-button" id="cart-button" title="장바구니">
-          🛒
-        </button>
-        <button class="icon-button" id="order-button" title="주문목록">
-          📦
-        </button>
-      </div>
+  
+
+  <div class="floating-icons">
+    <button class="icon-button" id="cart-button" title="장바구니">🛒</button>
+    <button class="icon-button" id="order-button" title="주문목록">📦</button>
+  </div>
 
   <!-- 헤더 -->
-  <div class="menu-toggle" id="menu-toggle">
-    &#9776;
-  </div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
   <header class="sidebar" id="sidebar">
     <div class="logo"><a href="#" id="logo-link">MIXD</a></div>
@@ -28,70 +24,58 @@
     <nav class="nav-vertical">
       <ul>
         <li><a href="#" id="women-link">WOMEN</a></li>
-        <li><a href="#">MEN</a></li>
-        <li><a href="#">ACCESSORY</a></li>
-        <li><a href="#">SALE</a></li>
-        <li><a href="#">SUPPORT</a></li>
+        <li><a href="#" id="men-link">MEN</a></li>
+        <li><a href="#" id="accessory-link">ACCESSORY</a></li>
+        <li><a href="#" id="sale-link">SALE</a></li>
+        <li><a href="#" id="support-link">SUPPORT</a></li>
       </ul>
     </nav>
   </header>
 
-
-
-
-  
-
-  <!-- 로그인 / 회원가입 버튼 -->
+  <!-- 로그인 / 회원가입 -->
   <div class="top-access">
     <a href="login.html" class="login">LOGIN</a>
     <a href="signup.html" class="signin">SIGNUP</a>
   </div>
 
+  <!-- 메인 콘텐츠 -->
   <div id="main-content">
-    <!-- 메인 배너 -->
     <section class="hero" id="hero-section">
       <h2>FUTURE STANDARD</h2>
       <p>미래를 입다. 시즌리스 유니섹스 스타일의 시작.</p>
     </section>
-  
-    <!-- 상품 목록 -->
+
     <section class="product-section" id="product-section">
       <h3>MIXD PICKS</h3>
       <div class="product-grid">
         <div class="product-card">
-          <img src="img/1000.jpg" alt="오버핏 하프 티셔츠">
-          <h4>오버핏 하프 티셔츠</h4>
+          <img src="img/1000.jpg" alt="DROP CORE" />
+          <h4>DROP CORE</h4>
           <p>₩29,000</p>
         </div>
-  
-      <div class="product-card">
-        <img src="img/1001.jpg.webp" alt="테크 셋업 팬츠">
-        <h4>테크 셋업 팬츠</h4>
-        <p>₩54,000</p>
+        <div class="product-card">
+          <img src="img/1001.jpg.webp" alt="SYNC TRACK Pants" />
+          <h4>SYNC TRACK Pants</h4>
+          <p>₩54,000</p>
+        </div>
+        <div class="product-card">
+          <img src="img/1002.Png" alt="EDGE CROP Jacket" />
+          <h4>EDGE CROP Jacket</h4>
+          <p>₩47,000</p>
+        </div>
+        <div class="product-card">
+          <img src="img/1003.jpg" alt="FLOW STRAIGHT Pants" />
+          <h4>FLOW STRAIGHT Pants</h4>
+          <p>₩38,000</p>
+        </div>
       </div>
-  
-      <div class="product-card">
-        <img src="img/1002.jpg" alt="크롭 미니 재킷">
-        <h4>크롭 미니 재킷</h4>
-        <p>₩47,000</p>
-      </div>
-  
-      <div class="product-card">
-        <img src="img/1003.jpg" alt="와이드 슬랙스 팬츠">
-        <h4>와이드 슬랙스 팬츠</h4>
-        <p>₩38,000</p>
     </section>
-</div>
-  
-      <section class="hero" id="hero-section">...</section>
-      <section class="product-section" id="product-section">...</section>
+  </div>
 
-    </div>
-  </section>
   <!-- 푸터 -->
   <footer>
     <div class="container">
-        <p class="credit">© 2025 20244150 박소영. All rights reserved.</p>
+      <p class="credit">© 2025 20244150 박소영. All rights reserved.</p>
       <div class="sns-links">
         <a href="https://www.instagram.com" target="_blank">Instagram</a>
         <a href="https://www.facebook.com" target="_blank">Facebook</a>
@@ -99,70 +83,86 @@
     </div>
   </footer>
 
-
   <script>
-    document.getElementById('women-link').addEventListener('click', function(e) {
+    // 사이드바 토글
+    const menuToggle = document.getElementById("menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("close-btn");
+  
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.add("active");
+      menuToggle.classList.add("hidden");
+    });
+  
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+      menuToggle.classList.remove("hidden");
+    });
+  
+    // 장바구니 / 주문목록 버튼
+    document.getElementById("cart-button").addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+    document.getElementById("order-button").addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+  
+    // 콘텐츠 로드 함수
+    function loadContent(file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("main-content").innerHTML = html;
+        })
+        .catch(err => console.error(file + " 로드 실패:", err));
+    }
+  
+    // 사이드바 링크 이벤트
+    document.getElementById("women-link").addEventListener("click", function (e) {
       e.preventDefault();
+      loadContent("women.html");
+    });
   
-      // 메인 콘텐츠 영역 교체
-      document.getElementById('main-content').innerHTML = `
-        <section class="hero">
-          <h2>WOMEN'S COLLECTION</h2>
-          <p>여성을 위한 시즌별 스타일 제안</p>
-        </section>
+    document.getElementById("men-link").addEventListener("click", function (e) {
+      e.preventDefault();
+      loadContent("men.html");
+    });
   
-        <section class="product-section">
-          <h3>WOMEN'S PICKS</h3>
-          <div class="product-grid">
-            <div class="product-card">
-              <img src="img/2000.jpg" alt="플리츠 미디 스커트">
-              <h4>플리츠 미디 스커트</h4>
-              <p>₩42,000</p>
-            </div>
-            <div class="product-card">
-              <img src="img/2001.jpg" alt="레이스 블라우스">
-              <h4>레이스 블라우스</h4>
-              <p>₩39,000</p>
-            </div>
-            <div class="product-card">
-              <img src="img/2002.jpg" alt="슬리브리스 원피스">
-              <h4>슬리브리스 원피스</h4>
-              <p>₩58,000</p>
-            </div>
-          </div>
-        </section>
-      `;
+// ACCESSORY
+document.getElementById("accessory-link").addEventListener("click", function (e) {
+  e.preventDefault();
+  loadContent("accessory.html");
+});
+
+// SALE
+document.getElementById("sale-link").addEventListener("click", function (e) {
+  e.preventDefault();
+  loadContent("sale.html");
+});
+
+// SUPPORT
+document.getElementById("support-link").addEventListener("click", function (e) {
+  e.preventDefault();
+  loadContent("support.html");
+});
+  
+    // MIXD 로고 클릭 → 메인 콘텐츠 복원
+    document.getElementById("logo-link").addEventListener("click", function (e) {
+      e.preventDefault();
+      location.reload();
     });
 
-    document.getElementById('logo-link').addEventListener('click', function(e) {
+      // DROP CORE 클릭 시 상품 상세 페이지 로드
+  document.querySelector('img[alt="DROP CORE"]').addEventListener('click', function () {
+    loadContent("dropcore.html");
+  });
+
+
+  // 장바구니 버튼 클릭 시 장바구니 페이지 로드
+  document.getElementById("cart-button").addEventListener("click", function (e) {
     e.preventDefault();
-    location.reload(); // 페이지 새로고침
-  });
-
-  // 사이드바 토글 기능 @@@@@@@
-  const menuToggle = document.getElementById("menu-toggle");
-  const sidebar = document.getElementById("sidebar");
-  const closeBtn = document.getElementById("close-btn");
-
-  menuToggle.addEventListener("click", function () {
-    sidebar.classList.add("active");
-    menuToggle.classList.add("hidden"); // ☰ 숨기기
-  });
-
-  closeBtn.addEventListener("click", function () {
-    sidebar.classList.remove("active");
-    menuToggle.classList.remove("hidden"); // ☰ 다시 보이게
-  });
-
-  // 장바구니 버튼 클릭 이벤트
-  document.getElementById("cart-button").addEventListener("click", function () {
-    this.classList.toggle("active");
-  });
-
-  document.getElementById("order-button").addEventListener("click", function () {
-    this.classList.toggle("active");
+    loadContent("cart.html"); // 장바구니 페이지 불러오기
   });
   </script>
-  
 </body>
 </html>
